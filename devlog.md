@@ -1,4 +1,4 @@
-\# Development Log – Bank Simulation Project
+## Development Log – Bank Simulation Project
 
 Author: Rufael Tekleab
 
@@ -10,7 +10,7 @@ Date: 11/16/2025
 
 
 
-\## 2025-11-16 14:05 – Initial planning
+## 2025-11-16 14:05 – Initial planning
 
 * Read project spec. Plan to implement a multi-threaded bank simulation with 3 teller threads and 50 customer threads.
 * Identified necessary shared resources: door capacity (2), manager approval (1), safe access (2), teller availability queue, and customer–teller handshake semaphores.
@@ -18,7 +18,7 @@ Date: 11/16/2025
 
 
 
-\*\*Plan for this session\*\*
+**Plan for this session**
 
 * Set up project folder and place all .py files inside.
 * Build initial teller and custome thread loops with placeholder prints.
@@ -26,7 +26,7 @@ Date: 11/16/2025
 
 
 
-\## 2025-11-16 15:40 – Work session
+## 2025-11-16 15:40 – Work session
 
 * Implemented teller workflow: ready state, waiting for customer, asking transaction, manager access, safe access, finishing transaction, and waiting for customer to exit.
 * Implemented customer workflow: random transaction selection, entering door, joining line, selecting teller, providing ID/transaction, waiting for completion, leaving bank.
@@ -35,7 +35,7 @@ Date: 11/16/2025
 
 
 
-\*\*Work performed\*\*
+**Work performed**
 
 * **teller code**: created full sequence including blocking on manager/safe; added ordered print statements before and after each step.
 * **customer code**: added door capacity control; added queue-based teller selection; added waiting logic for teller to finish.
@@ -43,7 +43,7 @@ Date: 11/16/2025
 
 
 
-\*\*Issues \& fixes\*\*
+**Issues & fixes**
 
 * Deadlock occurred when tellers and customers both waited on each other → fixed by restructuring signaling order.
 * Safe semaphore remained locked after long runs → fixed release placement.
@@ -51,7 +51,7 @@ Date: 11/16/2025
 
 
 
-\*\*Results\*\*
+**Results**
 
 * Completed full simulation with proper sequencing.
 * All 50 customers successfully served; tellers exit properly.
@@ -59,7 +59,7 @@ Date: 11/16/2025
 
 
 
-\*\*Next session\*\*
+**Next session**
 
 * Write README with usage, explanation of semaphores, and design notes.
 * Initialize git repo and commit files.
@@ -67,7 +67,7 @@ Date: 11/16/2025
 
 
 
-\## 2025-11-16 18:10 – Final reflection
+## 2025-11-16 18:10 – Final reflection
 
 * Verified end-to-end behavior, including manager and safe constraints.
 * README completed with instructions and explanation of concurrency model.
